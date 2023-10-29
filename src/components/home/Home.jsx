@@ -6,7 +6,7 @@ export default function Home() {
             <div className="header">
                 <h1>Home page</h1>
                 <p>Pick your perfect sunglasses for the summer!</p>
-                <p className="glassesMessage">Most bougth sunglasses</p>
+                <p className="glassesMessage">Most bought sunglasses</p>
             </div>
             <div className="container">
                 <div className="product">
