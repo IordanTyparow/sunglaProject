@@ -1,0 +1,52 @@
+.create-page {
+    text-align: center;
+    margin: 20px;
+}
+
+.create-page form {
+    background-color: #333;
+    max-width: 600px;
+    margin: 99px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-page label {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
+.create-page input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-page textarea {
+    height: 100px;
+}
+
+.create-page input[type="submit"] {
+    background-color: #00476d;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.create-page input[type="submit"]:hover {
+    background-color: cadetblue;
+}
