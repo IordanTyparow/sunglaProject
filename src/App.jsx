@@ -7,6 +7,7 @@ import Catalog from "./components/catalog/Catalog"
 import Create from "./components/create/Create"
 import Login from "./components/Login/Login"
 import ErrorPage from "./components/404/ErrorPage"
+import Register from "./components/register/Register"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/create" element={<Create />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
