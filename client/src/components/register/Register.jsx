@@ -8,7 +8,7 @@ export default function Register() {
             <form className="register-form" method="post">
                 <input type="text" name="email" placeholder="Email" required />
                 <input type="password" name="password" placeholder="Password" required />
-                <input type="password" name="password" placeholder="confirm-password" required />
+                <input type="password" name="repeatPassword" placeholder="confirm-password" required />
                 <button type="submit">Register</button>
                 <Link to="/register">If you have account</Link>
             </form>
