@@ -10,10 +10,11 @@ import ErrorPage from "./components/404/ErrorPage"
 import Register from "./components/register/Register"
 import Detaitls from "./components/details/Details"
 import Edit from "./components/edit/Edit"
+import { AuthProvider } from "../context/authContext"
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Header />
 
       <main>
@@ -30,7 +31,7 @@ function App() {
       </main>
 
       <Footer />
-    </>
+    </AuthProvider>
   )
 }
 
