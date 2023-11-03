@@ -1,4 +1,5 @@
 import "./Catalog.css"
+import { Link } from "react-router-dom"
 
 export default function Catalog() {
     return (
@@ -10,13 +11,13 @@ export default function Catalog() {
                     <img src="/images/glass3.png" />
                     <h3>Brand: product</h3>
                     <span>Price: $100</span>
-                    <a href="">More info</a>
+                    <Link to="/sunglasses/1/details">More info</Link>
                 </div>
                 <div className="product">
                     <img src="/images/glass4.png" />
                     <h3>Brand: product</h3>
                     <span>Price: $100</span>
-                    <a href="">More info</a>
+                    <Link to="">More info</Link>
                 </div>
             </div>
         </section>
