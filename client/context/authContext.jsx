@@ -12,12 +12,12 @@ export const AuthProvider = ({ children }) => {
     };
 
     const userRegister = (authData) => {
+        setError('')
         setAuth(authData);
     };
 
     const userLogout = () => {
         setAuth({});
-        setError('')
         localStorage.removeItem('auth')
     };
 
