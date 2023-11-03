@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Details.css";
 
 export default function Detaitls() {
@@ -11,10 +12,10 @@ export default function Detaitls() {
                 <p><strong>Price:</strong > $100</p>
                 <p>Description: someThing!</p>
                 <div className="buttons">
-                    <button>Edit</button>
+                    <Link to="/sunglasses/1/edit">Edit</Link>
                     <button>Delete</button>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
