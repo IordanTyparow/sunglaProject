@@ -2,19 +2,10 @@ import { Link } from "react-router-dom";
 import "./Header.css"
 
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/authContext";
 
-import { logout } from "../../services/authService"
-
 export default function Header() {
-    const { isAuthenticated, user } = useContext(AuthContext)
-    const navigate = useNavigate();
-
-    const onLogout = () => {
-        logout(user.accessToken);
-        navigate('/');
-    }
+    const { isAuthenticated } = useContext(AuthContext)
 
     return (
         <header>
