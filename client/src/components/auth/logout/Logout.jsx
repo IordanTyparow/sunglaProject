@@ -6,10 +6,10 @@ import { logout } from '../../../services/authService';
 
 const Logout = () => {
     const navigate = useNavigate();
-    const { user, userLogout } = useContext(AuthContext);
+    const { userLogout } = useContext(AuthContext);
 
     useEffect(() => {
-        logout(user.accessToken)
+        logout()
             .then(() => {
                 userLogout();
                 navigate('/');
