@@ -45,7 +45,7 @@ export default function Register() {
                 <input type="password" name="password" placeholder="Password" />
                 <input type="password" name="repeatPassword" placeholder="confirm-password" />
                 <button type="submit">Register</button>
-                <Link to="/register">If you have account</Link>
+                <Link to="/login">If you have account</Link>
             </form>
         </section>
     );
