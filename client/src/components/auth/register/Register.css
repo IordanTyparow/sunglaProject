@@ -52,3 +52,7 @@
 .register-form a:hover {
     color: #555;
 }
+
+.register-page .error {
+    color: red;
+}

@@ -1,18 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useLocalStorage("auth", {});
-    const [error, setError] = useState('')
 
     const userLogin = (authData) => {
         setAuth(authData);
     };
 
     const userRegister = (authData) => {
-        setError('')
         setAuth(authData);
     };
 
@@ -29,8 +27,6 @@ export const AuthProvider = ({ children }) => {
                 userLogin,
                 userLogout,
                 isAuthenticated: !!auth.accessToken,
-                setError,
-                error
             }}
         >
             {children}

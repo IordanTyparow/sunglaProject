@@ -52,3 +52,7 @@
 .login-form a:hover {
     color: #555;
 }
+
+.login-page .error {
+    color: red;
+}
