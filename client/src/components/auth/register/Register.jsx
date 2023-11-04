@@ -22,6 +22,7 @@ export default function Register() {
 
         if (!email || !password || !repeatPassword) {
             setError('Missing fields')
+            return
         }
 
         if (password !== repeatPassword) {
