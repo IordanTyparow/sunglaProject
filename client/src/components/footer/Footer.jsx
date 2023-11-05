@@ -8,10 +8,10 @@ export default function Footer() {
         <footer>
             <p>&copy; 2023 Your Website Name</p>
             <p>Designed by Iordan Typarow</p>
-            <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
-            <a href="#"><FontAwesomeIcon icon={faGithub} /></a>
+            <a href="https://www.facebook.com/profile.php?id=100084871037402"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="https://www.instagram.com/_tuparow_"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="https://www.linkedin.com/in/iordan-typarov-5848b3299"><FontAwesomeIcon icon={faLinkedin} /></a>
+            <a href="https://github.com/IordanTyparow"><FontAwesomeIcon icon={faGithub} /></a>
         </footer>
     )
 }
