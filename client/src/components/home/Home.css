@@ -77,8 +77,9 @@
 }
 
 .sunglasses-container img {
-    width: 700px;
-    height: 250px;
+    width: 900px;
+    height: 322px;
+    margin-top: -130px;
 }
 
 .sunglasses-link {

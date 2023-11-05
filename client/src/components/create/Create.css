@@ -3,8 +3,13 @@
     margin: 20px;
 }
 
+.create-page h1 {
+    color: white;
+    font-size: 45px;
+}
+
 .create-page form {
-    background-color: #333;
+    background-color: white;
     max-width: 600px;
     margin: 99px auto;
     padding: 20px;
@@ -17,7 +22,7 @@
     font-size: 25px;
     font-weight: bold;
     margin-top: 10px;
-    color: white;
+    color: #333;
 }
 
 .create-page input[type="text"],

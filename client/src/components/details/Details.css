@@ -7,6 +7,10 @@
     color: white;
     font-size: 45px;
 }
+.details-page .product .price {
+    color: red;
+    font-size: 25px;
+}
 
 .details-page .product {
     height: 700px;
@@ -32,7 +36,7 @@
 
 .details-page .product h3 {
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .details-page .product p {
@@ -42,24 +46,13 @@
     font-size: 25px;
 }
 
-.buttons a,
-.buttons button {
-    position: relative;
-    left: 300px;
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .buttons {
     display: flex;
-    gap: 10px;
+    position: relative;
+    left: 180px;
+    gap: 20px;
 }
 
-.buttons button:hover {
-    background-color: #1e87d0;
+.buttons a {
+    font-size: 20px;
 }
