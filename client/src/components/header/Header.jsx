@@ -9,8 +9,13 @@ export default function Header() {
 
     return (
         <header>
+            <div className="user-photo">
+                <img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" />
+            </div>
+            <div className="username">
+                <p>Welcome {user.email || 'Guest!'}</p>
+            </div>
             <ul>
-                <li className="username">Welcome {user.email || 'Guest'}</li>
                 <li><Link to="/" className="navbar">Home</Link></li>
                 <li><Link to="/catalog" className="navbar">Catalog</Link></li>
                 {isAuthenticated ?

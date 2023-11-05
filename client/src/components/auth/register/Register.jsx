@@ -18,10 +18,11 @@ export default function Register() {
         const formData = new FormData(e.target);
 
         const email = formData.get('email');
+        const imageUrl = formData.get('imageUrl');
         const password = formData.get('password')
         const repeatPassword = formData.get('repeatPassword');
 
-        if (!email || !password || !repeatPassword) {
+        if (!email || !password || !repeatPassword || !imageUrl) {
             setError('Missing fields')
             return
         }
@@ -31,7 +32,7 @@ export default function Register() {
             return;
         }
 
-        authService.register(email, password)
+        authService.register(email, password, imageUrl)
             .then(userData => {
                 userRegister(userData);
                 navigate('/');
@@ -44,6 +45,7 @@ export default function Register() {
             {error && <h3 className="error">{error}</h3>}
             <form className="register-form" onSubmit={onRegister}>
                 <input type="text" name="email" placeholder="Email" />
+                <input type="text" name="imageUrl" placeholder="Your photo" />
                 <input type="password" name="password" placeholder="Password" />
                 <input type="password" name="repeatPassword" placeholder="confirm-password" />
                 <button type="submit">Register</button>

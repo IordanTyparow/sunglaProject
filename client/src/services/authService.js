@@ -5,5 +5,5 @@ export const login = (email, password) =>
 
 export const logout = () => request.get("/users/logout");
 
-export const register = (email, password) =>
-    request.post(`/users/register`, { email, password });
+export const register = (email, password, imageUrl) =>
+    request.post(`/users/register`, { email, password, imageUrl });
