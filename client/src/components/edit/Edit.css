@@ -3,6 +3,11 @@
     margin: 20px;
 }
 
+.edit-page h1 {
+    color: white;
+    font-size: 45px;
+}
+
 .edit-page form {
     background-color: #333;
     max-width: 600px;

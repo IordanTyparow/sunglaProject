@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.details-page h1 {
+    color: white;
+    font-size: 45px;
+}
+
 .details-page .product {
     height: 700px;
     width: 850px;
