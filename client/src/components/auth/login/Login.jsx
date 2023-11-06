@@ -11,7 +11,7 @@ export default function Login() {
     const [error, setError] = useState('')
     const navigate = useNavigate()
 
-    const onLogin = (e) => {
+    const onLogin = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
@@ -19,17 +19,14 @@ export default function Login() {
         const email = formData.get('email');
         const password = formData.get('password');
 
-        if (!email || !password) {
-            setError('Missing fields');
-            return;
-        }
+        try {
+            const user = await authService.login(email, password);
 
-        authService.login(email, password)
-            .then(userData => {
-                userLogin(userData);
-                navigate('/');
-            })
-            .catch(err => setError(err.message));
+            userLogin(user);
+            navigate('/');
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
     return (

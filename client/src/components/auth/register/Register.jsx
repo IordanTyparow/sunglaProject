@@ -5,14 +5,14 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../context/authContext"
 
-import * as authService from "../../../services/authService";
+import * as authService from "../../../services/authService"
 
 export default function Register() {
     const { userRegister } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const onRegister = (e) => {
+    const onRegister = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
@@ -22,21 +22,14 @@ export default function Register() {
         const password = formData.get('password')
         const repeatPassword = formData.get('repeatPassword');
 
-        if (!email || !password || !repeatPassword || !imageUrl) {
-            setError('Missing fields')
-            return
-        }
+        try {
+            const user = await authService.register(email, password, repeatPassword, imageUrl);
 
-        if (password !== repeatPassword) {
-            setError('Passwords is not maching!');
-            return;
+            userRegister(user);
+            navigate('/');
+        } catch (error) {
+            setError(error.message);
         }
-
-        authService.register(email, password, imageUrl)
-            .then(userData => {
-                userRegister(userData);
-                navigate('/');
-            }).catch(err => setError(err.message))
     }
 
     return (
