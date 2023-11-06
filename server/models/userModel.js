@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: true,
+        required: [true, "The email is require!"],
     },
     password: {
         type: String,
-        required: true,
+        required: [true, "The password is require!"],
     },
     imageUrl: {
         type: String,
-        required: true,
+        required: [true, "The imageUrl is require!"],
     },
 });
 
