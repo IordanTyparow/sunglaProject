@@ -7,20 +7,23 @@ import { AuthContext } from "../../../../context/authContext"
 import * as authService from "../../../services/authService"
 
 export default function Login() {
+    const [error, setError] = useState('');
+    const [values, setValues] = useState({
+        email: '',
+        password: '',
+    });
     const { userLogin } = useContext(AuthContext);
-    const [error, setError] = useState('')
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    const onSetValueHandler = (e) => {
+        setValues(state => ({ ...state, [e.target.name]: e.target.value }));
+    }
 
     const onLogin = async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
-
-        const email = formData.get('email');
-        const password = formData.get('password');
-
         try {
-            const user = await authService.login(email, password);
+            const user = await authService.login(values.email, values.password);
 
             userLogin(user);
             navigate('/');
@@ -35,8 +38,8 @@ export default function Login() {
             {error && <h3 className="error">{error}</h3>}
             <div>
                 <form className="login-form" onSubmit={onLogin}>
-                    <input type="text" name="email" placeholder="Email" />
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="text" name="email" value={values.email} onChange={onSetValueHandler} placeholder="Email" />
+                    <input type="password" name="password" value={values.password} onChange={onSetValueHandler} placeholder="Password" />
                     <button type="submit">Login</button>
                     <Link to="/register">If don't have account</Link>
                 </form>
