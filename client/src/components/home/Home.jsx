@@ -10,7 +10,7 @@ export default function Home() {
                 <p>Pick your perfect sunglasses for the summer!</p>
             </div>
             <div className="sunglasses-container">
-                <Link to="/catalog" className="sunglasses-link">
+                <Link to="/sunglasses/catalog" className="sunglasses-link">
                     <img src="/images/glass3.png" alt="Sunglasses" className="sunglasses-image" />
                     <span className="ux-message">Browse Sunglasses</span>
                 </Link>
