@@ -12,8 +12,8 @@ export default function Register() {
     const [values, setValues] = useState({
         email: '',
         imageUrl: '',
-        password: '',
-        repeatPassword: '',
+        password: 0,
+        repeatPassword: 0,
     });
     const { userRegister } = useContext(AuthContext);
     const navigate = useNavigate();
