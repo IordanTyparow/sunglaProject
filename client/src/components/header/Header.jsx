@@ -17,10 +17,10 @@ export default function Header() {
             </div>
             <ul>
                 <li><Link to="/" className="navbar">Home</Link></li>
-                <li><Link to="/catalog" className="navbar">Catalog</Link></li>
+                <li><Link to="/sunglasses/catalog" className="navbar">Catalog</Link></li>
                 {user._id ?
                     <>
-                        <li><Link to="/create" className="navbar">Create</Link></li>
+                        <li><Link to="/sunglasses/create" className="navbar">Create</Link></li>
                         <li><Link to="/logout" className="navbar">Logout</Link></li>
                     </>
                     :

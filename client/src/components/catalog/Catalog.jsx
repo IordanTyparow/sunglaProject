@@ -1,24 +1,18 @@
 import "./Catalog.css"
-import { Link } from "react-router-dom"
+
+import { useContext } from "react"
+import { SunglassesContext } from "../../../context/sunglassesContext"
+import CatalogItem from "./CatalogItem";
 
 export default function Catalog() {
+    const { sunglasses } = useContext(SunglassesContext);
+
     return (
         <section className="catalog-page">
             <h1>Catalog page</h1>
 
             <div className="catalog-products">
-                <div className="product">
-                    <img src="/images/glass3.png" />
-                    <h3>Brand: product</h3>
-                    <span>Price: $100</span>
-                    <Link to="/sunglasses/1/details">More info</Link>
-                </div>
-                <div className="product">
-                    <img src="/images/glass4.png" />
-                    <h3>Brand: product</h3>
-                    <span>Price: $100</span>
-                    <Link to="">More info</Link>
-                </div>
+                {sunglasses.length !== 0 ? sunglasses.map(x => <CatalogItem key={x._id} item={x} />) : <h2>No have sunglasses yet!</h2>}
             </div>
         </section>
     )

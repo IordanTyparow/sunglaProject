@@ -10,27 +10,30 @@ import ErrorPage from "./components/404/ErrorPage"
 import Register from "./components/auth/register/Register"
 import Detaitls from "./components/details/Details"
 import Edit from "./components/edit/Edit"
-import { AuthProvider } from "../context/authContext"
 import Logout from "./components/auth/logout/Logout"
+
+import { AuthProvider } from "../context/authContext"
+import { SunglassesProvider } from "../context/sunglassesContext"
 
 function App() {
   return (
     <AuthProvider>
       <Header />
-
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="/auth/register" element={<Register />} />
-          <Route path="/sunglasses/:sunglassesId/details" element={<Detaitls />} />
-          <Route path="/sunglasses/:sunglassesId/edit" element={<Edit />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </main>
+      <SunglassesProvider>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sunglasses/catalog" element={<Catalog />} />
+            <Route path="/sunglasses/create" element={<Create />} />
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/register" element={<Register />} />
+            <Route path="/sunglasses/:sunglassesId/details" element={<Detaitls />} />
+            <Route path="/sunglasses/:sunglassesId/edit" element={<Edit />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </main>
+      </SunglassesProvider>
 
       <Footer />
     </AuthProvider>

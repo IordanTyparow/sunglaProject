@@ -7,6 +7,11 @@
     color: white;
 }
 
+.catalog-page h2 {
+    font-size: 45px;
+    color: white;
+}
+
 .catalog-products {
     height: 871px;
 }

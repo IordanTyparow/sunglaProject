@@ -55,3 +55,7 @@ textarea {
 .create-page input[type="submit"]:hover {
     background-color: cadetblue;
 }
+
+.error {
+    color: red;
+}
