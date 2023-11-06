@@ -17,6 +17,7 @@ const sunglassesSchema = new mongoose.Schema({
         type: String,
         required: [true, "The imageUrl is require!"],
     },
+    _owner: { type: mongoose.Types.ObjectId, ref: "user" },
 });
 
 const Sunglasses = mongoose.model("sunglasses", sunglassesSchema);
