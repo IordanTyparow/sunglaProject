@@ -6,6 +6,7 @@
 .create-page h1 {
     color: white;
     font-size: 45px;
+    text-shadow: 5px 5px 5px black;
 }
 
 .create-page form {

@@ -6,11 +6,13 @@
 .home-page h1 {
     color: white;
     font-size: 50px;
+    text-shadow: 5px 5px 5px black;
 }
 
 .home-page p {
     color: white;
     font-size: 35px;
+    text-shadow: 5px 5px 5px black;
 }
 
 .home-page .container {
