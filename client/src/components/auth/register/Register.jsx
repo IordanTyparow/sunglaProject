@@ -45,29 +45,37 @@ export default function Register() {
             <h1>Register</h1>
             {error && <h3 className="error">{error}</h3>}
             <form className="register-form" onSubmit={onRegister}>
+                <label htmlFor="email">Email:</label>
                 <input
                     type="text"
+                    id="email"
                     name="email"
                     value={values.email}
                     onChange={onSetValueHandler}
                     placeholder="Email"
                 />
+                <label htmlFor="imageUrl">imageUrl:</label>
                 <input
                     type="text"
+                    id="imageUrl"
                     name="imageUrl"
                     value={values.imageUrl}
                     onChange={onSetValueHandler}
                     placeholder="Your photo"
                 />
+                <label htmlFor="password">Password:</label>
                 <input
                     type="password"
+                    id="password"
                     name="password"
                     value={values.password}
                     onChange={onSetValueHandler}
                     placeholder="Password"
                 />
+                <label htmlFor="repeatPasswrod">Repreat password:</label>
                 <input
                     type="password"
+                    id="repeatPassword"
                     name="repeatPassword"
                     value={values.repeatPassword}
                     onChange={onSetValueHandler}

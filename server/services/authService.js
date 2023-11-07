@@ -12,7 +12,7 @@ exports.register = async ({ email, password, repeatPassword, imageUrl }) => {
 
     const hashedPassword = await bcrypt.hash(password, SALT);
 
-    const createdUser = User.create({
+    const createdUser = await User.create({
         email,
         password: hashedPassword,
         imageUrl,

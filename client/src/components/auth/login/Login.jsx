@@ -38,7 +38,9 @@ export default function Login() {
             {error && <h3 className="error">{error}</h3>}
             <div>
                 <form className="login-form" onSubmit={onLogin}>
-                    <input type="text" name="email" value={values.email} onChange={onSetValueHandler} placeholder="Email" />
+                    <label htmlFor="email">Email:</label>
+                    <input type="text" id="email" name="email" value={values.email} onChange={onSetValueHandler} placeholder="Email" />
+                    <label htmlFor="password">Password:</label>
                     <input type="password" name="password" value={values.password} onChange={onSetValueHandler} placeholder="Password" />
                     <button type="submit">Login</button>
                     <Link to="/register">If don't have account</Link>

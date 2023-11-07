@@ -17,12 +17,20 @@
     margin-top: 20px;
 }
 
+.login-form label {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
 .login-form input {
     width: 90%;
     padding: 10px;
     font-size: 20px;
     margin-top: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 5px;
 }
 
