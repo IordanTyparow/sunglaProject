@@ -1,5 +1,7 @@
 .details-page {
     height: 926px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -13,6 +15,8 @@
 }
 
 .details-page .product {
+    flex-direction: column;
+    align-items: center;
     height: 700px;
     width: 850px;
     display: inline-block;
@@ -46,13 +50,24 @@
     font-size: 25px;
 }
 
-.buttons {
-    display: flex;
-    position: relative;
-    left: 180px;
-    gap: 20px;
+.details-page .product .buttons {
+    margin-top: -30px;
+    text-align: center;
 }
 
-.buttons a {
-    font-size: 20px;
+.details-page .buttons a {
+    font-size: 25px;
+    color: white;
+    border-radius: 10px;
+    background-color: #333;
+    border: 3px solid black;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.details-page .buttons a:hover {
+    background-color: #555;
+    color: #fff;
 }

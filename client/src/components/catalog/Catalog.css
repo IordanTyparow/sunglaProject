@@ -16,7 +16,7 @@
     height: 871px;
 }
 
-.product {
+.catalog-page .product {
     display: inline-block;
     max-width: 300px;
     margin: 10px;
@@ -28,23 +28,23 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.product img {
+.catalog-page .product img {
     max-width: 100%;
     height: 200px;
     margin-bottom: 10px;
 }
 
-.product h3 {
+.catalog-page .product h3 {
     font-size: 22px;
     margin: 10px 0;
 }
 
-.product span {
+.catalog-page .product span {
     font-size: 20px;
     color: #ff5733;
 }
 
-.product a {
+.catalog-page .product a {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
@@ -55,6 +55,6 @@
     margin-top: 10px;
 }
 
-.product a:hover {
+.catalog-page .product a:hover {
     background-color: #0056b3;
 }

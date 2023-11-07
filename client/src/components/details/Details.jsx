@@ -14,6 +14,7 @@ export default function Detaitls() {
                 <div className="buttons">
                     <Link to="/sunglasses/1/edit">Edit</Link>
                     <Link to="/sunglasses/1/delete">Delete</Link>
+                    <Link to="/sunglasses/1/buy">Buy</Link>
                 </div>
             </div>
         </section >
