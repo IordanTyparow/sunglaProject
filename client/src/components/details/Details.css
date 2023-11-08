@@ -8,7 +8,9 @@
 .details-page h1 {
     color: white;
     font-size: 45px;
+    text-shadow: 5px 5px 5px black;
 }
+
 .details-page .product .price {
     color: red;
     font-size: 25px;
@@ -35,7 +37,12 @@
 }
 
 .details-page .product img {
-    width: 850px;
+    position: relative;
+    left: 220px;
+    max-width: 420px;
+    max-height: 350px;
+    width: 420px;
+    height: 350px;
 }
 
 .details-page .product h3 {

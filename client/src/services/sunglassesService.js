@@ -29,3 +29,19 @@ export const getAllSunglasses = () => {
         res.json()
     );
 };
+
+export const getOneSunglasses = (sunglassesId) => {
+    return fetch(
+        `http://localhost:3000/sunglasses/${sunglassesId}/details`
+    ).then((res) => res.json());
+};
+
+export const updateOne = (sunglassesId, sunglassesData) => {
+    return fetch(`http://localhost:3000/sunglasses/${sunglassesId}/edit`, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify(sunglassesData),
+    }).then((res) => res.json());
+};

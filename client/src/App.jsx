@@ -16,6 +16,7 @@ import { AuthProvider } from "../context/authContext"
 import { SunglassesProvider } from "../context/sunglassesContext"
 
 function App() {
+
   return (
     <AuthProvider>
       <Header />
