@@ -1,7 +1,5 @@
 import * as request from "./requester";
 
-const baseUrl = "http://localhost:3030/users";
-
 export const login = async (email, password) => {
     if (!email || !password) {
         throw {
@@ -9,7 +7,7 @@ export const login = async (email, password) => {
         };
     }
 
-    const response = await request.post(`${baseUrl}/login`, {
+    const response = await request.post(`/users/login`, {
         email,
         password,
     });
@@ -25,7 +23,7 @@ export const login = async (email, password) => {
 
 export const logout = async (accessToken) => {
     try {
-        const response = await fetch(`${baseUrl}/logout`, {
+        const response = await fetch(`/users/logout`, {
             headers: {
                 "X-Authorization": accessToken,
             },
@@ -50,7 +48,7 @@ export const register = async (email, password, repeatPassword, imageUrl) => {
         };
     }
 
-    const response = await request.post(`${baseUrl}/register`, {
+    const response = await request.post(`/users/register`, {
         email,
         password,
         imageUrl,

@@ -1,22 +1,12 @@
-const user = JSON.parse(localStorage.getItem("auth"));
+import * as request from "./requester";
 
-export const getAll = () => {
-    return fetch("http://localhost:3030/data/sunglasses").then((res) =>
-        res.json()
-    );
-};
+export const getAll = () => request.get("/data/sunglasses");
 
-export const create = async (sunglassesData) => {
-    const response = await fetch("http://localhost:3030/data/sunglasses", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-            "X-Authorization": user.accessToken,
-        },
-        body: JSON.stringify(sunglassesData),
-    });
+export const getOne = (sunglassesId) =>
+    request.get(`/data/sunglasses/${sunglassesId}`);
 
-    const data = await response.json();
+export const create = (sunglassesData) =>
+    request.post("/data/sunglasses", sunglassesData);
 
-    return data;
-};
+export const edit = (sunglassesId, sunglassesData) =>
+    request.put(`/data/sunglasses/${sunglassesId}`, sunglassesData);

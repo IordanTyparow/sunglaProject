@@ -31,17 +31,14 @@ export default function Create() {
             brand: values.brand,
             price: values.price,
             description: values.description,
-            imageUrl: values.brand,
+            imageUrl: values.imageUrl,
         }
 
-        try {
-            const sunglasses = await sunglassesService.create(sunglassesData);
-
-            addSunglasses(sunglasses);
-            navigate('/sunglasses/catalog');
-        } catch (error) {
-            setError(error.message);
-        }
+        sunglassesService.create(sunglassesData)
+            .then(sunglassesData => {
+                addSunglasses(sunglassesData);
+                navigate('/sunglasses/catalog');
+            }).catch(error => setError(error.message));
     }
 
     return (

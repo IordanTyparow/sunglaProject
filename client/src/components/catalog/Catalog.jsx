@@ -12,7 +12,10 @@ export default function Catalog() {
             <h1>Catalog page</h1>
 
             <div className="catalog-products">
-                {sunglasses.length !== 0 ? sunglasses.map(x => <CatalogItem key={x._id} item={x} />) : <h2>No have sunglasses yet!</h2>}
+                {sunglasses.length > 0
+                    ? sunglasses.map(x => <CatalogItem key={x._id} item={x} />)
+                    : <h2>No have sunglasses yet!</h2>
+                }
             </div>
         </section>
     )

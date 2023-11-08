@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getAll } from "../src/services/sunglassesService";
+import * as sunglassesService from "../src/services/sunglassesService";
 
 export const SunglassesContext = createContext();
 
@@ -9,7 +9,7 @@ export const SunglassesProvider = ({ children }) => {
     const addSunglasses = (sunglassesData) => setSunglasses(state => [...state, sunglassesData]);
 
     useEffect(() => {
-        getAll().then(data => {
+        sunglassesService.getAll().then(data => {
             setSunglasses(data);
         })
     }, []);

@@ -1,40 +1,41 @@
-const request = async (method, url, data) => {
-    try {
-        const user = localStorage.getItem("auth");
-        const auth = JSON.parse(user || "{}");
+const host = "http://localhost:3030";
 
-        let headers = {};
+async function request(method, url, data) {
+    let options = {
+        method,
+        headers: {},
+    };
 
-        if (auth.accessToken) {
-            headers["X-Authorization"] = auth.accessToken;
-        }
-
-        let buildRequest;
-
-        if (method === "GET") {
-            buildRequest = fetch(url, { headers });
-        } else {
-            buildRequest = fetch(url, {
-                method,
-                headers: {
-                    ...headers,
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-        }
-        const response = await buildRequest;
-
-        const result = await response.json();
-
-        return result;
-    } catch (error) {
-        throw error;
+    let user = JSON.parse(localStorage.getItem("auth"));
+    if (user) {
+        options.headers["X-Authorization"] = user.accessToken;
     }
-};
 
-export const get = request.bind({}, "GET");
-export const post = request.bind({}, "POST");
-export const patch = request.bind({}, "PATCH");
-export const put = request.bind({}, "PUT");
-export const del = request.bind({}, "DELETE");
+    if (data) {
+        options.headers["Content-Type"] = "application/json";
+        options.body = JSON.stringify(data);
+    }
+
+    try {
+        const response = await fetch(host + url, options);
+
+        if (response.ok == false) {
+            const error = await response.json();
+            throw new Error(error.message);
+        }
+
+        try {
+            const data = await response.json();
+            return data;
+        } catch (err) {
+            return response;
+        }
+    } catch (err) {
+        throw err;
+    }
+}
+
+export const get = request.bind(null, "GET");
+export const post = request.bind(null, "POST");
+export const put = request.bind(null, "PUT");
+export const del = request.bind(null, "DELETE");
