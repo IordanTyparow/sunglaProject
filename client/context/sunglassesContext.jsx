@@ -6,7 +6,19 @@ export const SunglassesContext = createContext();
 export const SunglassesProvider = ({ children }) => {
     const [sunglasses, setSunglasses] = useState([]);
 
-    const addSunglasses = (sunglassesData) => setSunglasses(state => [...state, sunglassesData]);
+    const addSunglasses = (sunglassesData) => {
+        console.log(sunglassesData);
+        setSunglasses(state => {
+            const index = state.findIndex(sunglasses => sunglasses._id === sunglassesData._id);
+
+            if (index !== -1) {
+                state[index] = sunglassesData;
+                return [...state];
+            } else {
+                return [...state, sunglassesData];
+            }
+        });
+    }
 
     const removeOne = (sunglassesData) => { setSunglasses((state) => state.filter((sunglasses) => sunglasses !== sunglassesData)); };
 

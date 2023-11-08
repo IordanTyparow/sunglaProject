@@ -1,16 +1,55 @@
 import "./Edit.css";
 
+import { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { SunglassesContext } from "../../../context/sunglassesContext";
+import * as sunglassesService from "../../services/sunglassesService";
+
 export default function Edit() {
+    const [current, setCurrent] = useState({});
+    const { addSunglasses } = useContext(SunglassesContext);
+    const navigate = useNavigate();
+    const { sunglassesId } = useParams();
+
+    useEffect(() => {
+        sunglassesService.getOne(sunglassesId)
+            .then(data => setCurrent(data));
+    }, []);
+
+    const onSetValueHandler = (e) => {
+        setCurrent((state) => ({ ...state, [e.target.name]: e.target.value }));
+    };
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const sunglassesData = {
+            brand: current.brand,
+            price: current.price,
+            description: current.description,
+            imageUrl: current.imageUrl,
+        };
+
+        sunglassesService.edit(sunglassesId, sunglassesData)
+            .then(data => {
+                addSunglasses(data);
+                navigate(`/sunglasses/${sunglassesId}/details`);
+            });
+    }
+
     return (
         <section className="edit-page">
             <h1>Edit page</h1>
 
-            <form>
+            <form onSubmit={onSubmitHandler}>
                 <label htmlFor="brand">Brand:</label>
                 <input
                     type="text"
                     id="brand"
                     name="brand"
+                    value={current.brand || ""}
+                    onChange={onSetValueHandler}
                     placeholder="Brand"
                 />
                 <label htmlFor="price">Price:</label>
@@ -18,8 +57,10 @@ export default function Edit() {
                     type="text"
                     id="price"
                     name="price"
-                    placeholder="Price"
+                    value={current.price || ""}
+                    onChange={onSetValueHandler}
 
+                    placeholder="Price"
                 />
                 <label htmlFor="description">Description:</label>
                 <textarea
@@ -27,6 +68,9 @@ export default function Edit() {
                     id="description"
                     cols="30"
                     rows="10"
+                    value={current.description || ""}
+                    onChange={onSetValueHandler}
+
                     placeholder="Description"
 
                 ></textarea>
@@ -35,6 +79,8 @@ export default function Edit() {
                     type="text"
                     id="imageUrl"
                     name="imageUrl"
+                    value={current.imageUrl || ""}
+                    onChange={onSetValueHandler}
                     placeholder="imageUrl"
                 />
                 <input type="submit" value="Edit product" />
