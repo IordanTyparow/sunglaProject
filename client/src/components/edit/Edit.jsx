@@ -37,7 +37,7 @@ export default function Edit() {
                     name="imageUrl"
                     placeholder="imageUrl"
                 />
-                <input type="submit" defaultValue="Edit product" />
+                <input type="submit" value="Edit product" />
             </form>
         </section>
     );

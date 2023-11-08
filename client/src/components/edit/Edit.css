@@ -6,6 +6,7 @@
 .edit-page h1 {
     color: white;
     font-size: 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .edit-page form {

@@ -3,8 +3,10 @@ import "./Create.css";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { SunglassesContext } from "../../../context/sunglassesContext"
-import { AuthContext } from "../../../context/authContext"
+import { SunglassesContext } from "../../../context/sunglassesContext";
+import { AuthContext } from "../../../context/authContext";
+
+import * as sunglassesService from "../../services/sunglassesService";
 
 export default function Create() {
     const navigate = useNavigate();
@@ -22,10 +24,30 @@ export default function Create() {
         setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
     };
 
+    const onCreateHandler = async (e) => {
+        e.preventDefault();
+
+        const sunglassesData = {
+            brand: values.brand,
+            price: values.price,
+            description: values.description,
+            imageUrl: values.brand,
+        }
+
+        try {
+            const sunglasses = await sunglassesService.create(sunglassesData);
+
+            addSunglasses(sunglasses);
+            navigate('/sunglasses/catalog');
+        } catch (error) {
+            setError(error.message);
+        }
+    }
+
     return (
         <section className="create-page">
             <h1>Create new sunglasses</h1>
-            <form>
+            <form onSubmit={onCreateHandler}>
                 {error && <h3 className="error">{error}</h3>}
                 <label htmlFor="brand">Brand: </label>
                 <input
