@@ -3,6 +3,12 @@ import * as request from "./requester";
 const baseUrl = "http://localhost:3030/users";
 
 export const login = async (email, password) => {
+    if (!email || !password) {
+        throw {
+            message: "The email and password is required!",
+        };
+    }
+
     const response = await request.post(`${baseUrl}/login`, {
         email,
         password,
@@ -31,7 +37,19 @@ export const logout = async (accessToken) => {
     }
 };
 
-export const register = async (email, password, imageUrl) => {
+export const register = async (email, password, repeatPassword, imageUrl) => {
+    if (!email || !password) {
+        throw {
+            message: "The email and password is require!",
+        };
+    }
+
+    if (password !== repeatPassword) {
+        throw {
+            message: "The passwords is not maching!",
+        };
+    }
+
     const response = await request.post(`${baseUrl}/register`, {
         email,
         password,

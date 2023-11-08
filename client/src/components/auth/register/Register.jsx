@@ -26,7 +26,7 @@ export default function Register() {
         e.preventDefault();
 
         try {
-            const user = await authService.register(values.email, values.password, values.imageUrl);
+            const user = await authService.register(values.email, values.password, values.repeatPassword, values.imageUrl);
 
             userRegister(user);
             navigate('/');
