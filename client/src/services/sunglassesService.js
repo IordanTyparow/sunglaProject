@@ -2,6 +2,9 @@ import * as request from "./requester";
 
 export const getAll = () => request.get("/data/sunglasses");
 
+export const deleteOne = (sunglassesId) =>
+    request.del(`/data/sunglasses/${sunglassesId}`);
+
 export const getOne = (sunglassesId) =>
     request.get(`/data/sunglasses/${sunglassesId}`);
 

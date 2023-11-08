@@ -1,11 +1,19 @@
 import "./Catalog.css"
 
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { SunglassesContext } from "../../../context/sunglassesContext"
 import CatalogItem from "./CatalogItem";
 
+import * as sunglassesService from "../../services/sunglassesService";
+
 export default function Catalog() {
-    const { sunglasses } = useContext(SunglassesContext);
+    const { sunglasses, setSunglasses } = useContext(SunglassesContext);
+
+    useEffect(() => {
+        sunglassesService.getAll().then(data => {
+            setSunglasses(data);
+        })
+    }, []);
 
     return (
         <section className="catalog-page">

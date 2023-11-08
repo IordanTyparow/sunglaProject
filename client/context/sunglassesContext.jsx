@@ -8,15 +8,11 @@ export const SunglassesProvider = ({ children }) => {
 
     const addSunglasses = (sunglassesData) => setSunglasses(state => [...state, sunglassesData]);
 
-    useEffect(() => {
-        sunglassesService.getAll().then(data => {
-            setSunglasses(data);
-        })
-    }, []);
+    const removeOne = (sunglassesData) => { setSunglasses((state) => state.filter((sunglasses) => sunglasses !== sunglassesData)); };
 
     return (
         <SunglassesContext.Provider
-            value={{ sunglasses, addSunglasses }}
+            value={{ sunglasses, setSunglasses, addSunglasses, removeOne }}
         >
             {children}
         </SunglassesContext.Provider>

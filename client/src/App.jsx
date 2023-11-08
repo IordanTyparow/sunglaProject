@@ -10,6 +10,7 @@ import ErrorPage from "./components/404/ErrorPage"
 import Register from "./components/auth/register/Register"
 import Detaitls from "./components/details/Details"
 import Edit from "./components/edit/Edit"
+import Delete from "./components/delete/Delete"
 import Logout from "./components/auth/logout/Logout"
 
 import { AuthProvider } from "../context/authContext"
@@ -31,6 +32,7 @@ function App() {
             <Route path="/sunglasses/:sunglassesId/details" element={<Detaitls />} />
             <Route path="/sunglasses/:sunglassesId/edit" element={<Edit />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/sunglasses/:sunglassesId/delete" element={<Delete />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </main>
