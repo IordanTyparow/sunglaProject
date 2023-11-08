@@ -26,6 +26,7 @@ export const AuthProvider = ({ children }) => {
                 userRegister,
                 userLogin,
                 userLogout,
+                isAuthenticated: !!auth.accessToken
             }}
         >
             {children}

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../context/authContext";
 
 export default function Header() {
-    const { user } = useContext(AuthContext)
+    const { isAuthenticated, user } = useContext(AuthContext)
 
     return (
         <header>
@@ -18,7 +18,7 @@ export default function Header() {
             <ul>
                 <li><Link to="/" className="navbar">Home</Link></li>
                 <li><Link to="/sunglasses/catalog" className="navbar">Catalog</Link></li>
-                {user._id ?
+                {isAuthenticated ?
                     <>
                         <li><Link to="/sunglasses/create" className="navbar">Create</Link></li>
                         <li><Link to="/logout" className="navbar">Logout</Link></li>

@@ -1,39 +1,54 @@
+import * as request from "./requester";
+
+const baseUrl = "http://localhost:3030/users";
+
 export const login = async (email, password) => {
-    const response = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+    const response = await request.post(`${baseUrl}/login`, {
+        email,
+        password,
     });
 
-    if (!response.ok) {
+    if (response.code === 403) {
         throw {
-            message: await response.json(),
+            message: response.message,
         };
     }
 
-    const data = await response.json();
-
-    return data;
+    return response;
 };
 
-export const register = async (email, password, repeatPassword, imageUrl) => {
-    const response = await fetch("http://localhost:3000/auth/register", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify({ email, password, repeatPassword, imageUrl }),
+export const logout = async (accessToken) => {
+    try {
+        const response = await fetch(`${baseUrl}/logout`, {
+            headers: {
+                "X-Authorization": accessToken,
+            },
+        });
+
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const register = async (email, password, imageUrl) => {
+    const response = await request.post(`${baseUrl}/register`, {
+        email,
+        password,
+        imageUrl,
     });
 
-    if (!response.ok) {
+    if (response.code === 400) {
         throw {
-            message: await response.json(),
+            message: response.message,
         };
     }
 
-    const data = await response.json();
+    if (response.code === 409) {
+        throw {
+            message: response.message,
+        };
+    }
 
-    return data;
+    return response;
 };

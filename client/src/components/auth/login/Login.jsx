@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../context/authContext"
 
-import * as authService from "../../../services/authService"
+import * as authService from "../../../services/authService";
 
 export default function Login() {
     const [error, setError] = useState('');
