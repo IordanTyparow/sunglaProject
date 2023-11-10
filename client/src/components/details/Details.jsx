@@ -12,7 +12,7 @@ export default function Detaitls() {
     const [likes, setLikes] = useState(0);
     const [userLikes, setUserLikes] = useState(0);
     const navigate = useNavigate();
-    const { user } = useContext(AuthContext);
+    const { user, isAuthenticated } = useContext(AuthContext);
     const { sunglassesId } = useParams();
 
     useEffect(() => {
@@ -48,7 +48,7 @@ export default function Detaitls() {
                 <p className="price"><strong>Price:</strong > ${current.price}</p>
                 <p>Description: {current.description}</p>
                 <div className="buttons">
-                    {user.isAuthenticated ?
+                    {isAuthenticated ?
                         <>
                             {isOwner
                                 ?
@@ -56,7 +56,7 @@ export default function Detaitls() {
                                     <Link to={`/sunglasses/${current._id}/edit`}>Edit</Link>
                                     <Link to={`/sunglasses/${current._id}/delete`}>Delete</Link>
                                 </>
-                                : userLikes == 0 ? <button onClick={() => onLikeHandler(current._id)}>Like</button> : <button>You allready like this post!</button>
+                                : userLikes == 0 ? <button onClick={() => onLikeHandler(current._id)}>Like</button> : <button>You already liked this post!</button>
                             }
                         </>
                         : ""}
