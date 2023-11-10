@@ -13,3 +13,23 @@ export const create = (sunglassesData) =>
 
 export const edit = (sunglassesId, sunglassesData) =>
     request.put(`/data/sunglasses/${sunglassesId}`, sunglassesData);
+
+export const like = (sunglassesId) => {
+    request.post("/data/likes", { sunglassesId });
+};
+
+export const ownLikes = (sunglassesId) => {
+    return request.get(
+        `/data/likes?where=sunglassesId%3D%22${encodeURIComponent(
+            sunglassesId
+        )}%22&distinct=_ownerId&count`
+    );
+};
+
+export const currentUserLikes = (sunglassesId, userId) => {
+    return request.get(
+        `/data/likes?where=sunglassesId%3D%22${encodeURIComponent(
+            sunglassesId
+        )}%22%20and%20_ownerId%3D%22${encodeURIComponent(userId)}%22&count`
+    );
+};

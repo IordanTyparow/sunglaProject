@@ -7,7 +7,6 @@ export const SunglassesProvider = ({ children }) => {
     const [sunglasses, setSunglasses] = useState([]);
 
     const addSunglasses = (sunglassesData) => {
-        console.log(sunglassesData);
         setSunglasses(state => {
             const index = state.findIndex(sunglasses => sunglasses._id === sunglassesData._id);
 

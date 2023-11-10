@@ -8,7 +8,7 @@ export default function Header() {
     const { isAuthenticated, user } = useContext(AuthContext)
 
     return (
-        <header>
+        <header className="header-page">
             <div className="user-photo">
                 <img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" />
             </div>

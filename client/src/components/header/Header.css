@@ -12,34 +12,34 @@ main {
     margin-bottom: 78px;
 }
 
-header {
+.header-page {
     background-color: #333;
     height: 61px;
 }
 
-ul {
+.header-page ul {
     list-style-type: none;
     text-align: center;
     margin: 0;
     padding: 11px;
 }
 
-li {
+.header-page li {
     display: inline;
 }
 
-.navbar {
+.header-page .navbar {
     color: white;
     font-size: 30px;
     text-decoration: none;
     margin: 10px;
 }
 
-.navbar:hover {
+.header-page .navbar:hover {
     color: cadetblue;
 }
 
-.user-photo {
+.header-page .user-photo {
     position: fixed;
     margin-top: 5px;
     left: 610px;
@@ -54,7 +54,7 @@ li {
     align-items: center;
 }
 
-.user-photo img {
+.header-page .user-photo img {
     max-width: 100%;
     max-height: 100%;
     width: 60px;
@@ -62,7 +62,7 @@ li {
     object-fit: cover;
 }
 
-.username {
+.header-page .username {
     position: fixed;
     margin-top: -10px;
     left: 680px;
