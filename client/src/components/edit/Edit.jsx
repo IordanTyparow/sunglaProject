@@ -8,6 +8,7 @@ import * as sunglassesService from "../../services/sunglassesService";
 
 export default function Edit() {
     const [current, setCurrent] = useState({});
+    const [error, setError] = useState('');
     const { addSunglasses } = useContext(SunglassesContext);
     const navigate = useNavigate();
     const { sunglassesId } = useParams();
@@ -21,7 +22,7 @@ export default function Edit() {
         setCurrent((state) => ({ ...state, [e.target.name]: e.target.value }));
     };
 
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
 
         const sunglassesData = {
@@ -31,11 +32,14 @@ export default function Edit() {
             imageUrl: current.imageUrl,
         };
 
-        sunglassesService.edit(sunglassesId, sunglassesData)
-            .then(data => {
-                addSunglasses(data);
-                navigate(`/sunglasses/${sunglassesId}/details`);
-            });
+        try {
+            const data = await sunglassesService.edit(sunglassesId, sunglassesData)
+
+            addSunglasses(data);
+            navigate(`/sunglasses/${sunglassesId}/details`);
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
     return (
@@ -43,6 +47,7 @@ export default function Edit() {
             <h1>Edit page</h1>
 
             <form onSubmit={onSubmitHandler}>
+                {error && <h3 className="error">{error}</h3>}
                 <label htmlFor="brand">Brand:</label>
                 <input
                     type="text"

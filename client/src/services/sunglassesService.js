@@ -8,11 +8,39 @@ export const deleteOne = (sunglassesId) =>
 export const getOne = (sunglassesId) =>
     request.get(`/data/sunglasses/${sunglassesId}`);
 
-export const create = (sunglassesData) =>
-    request.post("/data/sunglasses", sunglassesData);
+export const create = async ({ brand, price, description, imageUrl }) => {
+    if (!brand || !price || !description || !imageUrl) {
+        throw {
+            message: "All fields is require!",
+        };
+    }
 
-export const edit = (sunglassesId, sunglassesData) =>
-    request.put(`/data/sunglasses/${sunglassesId}`, sunglassesData);
+    const data = await request.post("/data/sunglasses", {
+        brand,
+        price,
+        description,
+        imageUrl,
+    });
+
+    return data;
+};
+
+export const edit = (sunglassesId, { brand, price, description, imageUrl }) => {
+    if (!brand || !price || !description || !imageUrl) {
+        throw {
+            message: "All fields is require!",
+        };
+    }
+
+    const data = request.put(`/data/sunglasses/${sunglassesId}`, {
+        brand,
+        price,
+        description,
+        imageUrl,
+    });
+
+    return data;
+};
 
 export const like = (sunglassesId) => {
     request.post("/data/likes", { sunglassesId });

@@ -4,14 +4,12 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { SunglassesContext } from "../../../context/sunglassesContext";
-import { AuthContext } from "../../../context/authContext";
 
 import * as sunglassesService from "../../services/sunglassesService";
 
 export default function Create() {
     const navigate = useNavigate();
     const { addSunglasses } = useContext(SunglassesContext);
-    const { user } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [values, setValues] = useState({
         brand: "",
@@ -34,11 +32,14 @@ export default function Create() {
             imageUrl: values.imageUrl,
         }
 
-        sunglassesService.create(sunglassesData)
-            .then(sunglassesData => {
-                addSunglasses(sunglassesData);
-                navigate('/sunglasses/catalog');
-            }).catch(error => setError(error.message));
+        try {
+            const data = await sunglassesService.create(sunglassesData);
+
+            addSunglasses(data);
+            navigate('/sunglasses/catalog');
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
     return (
