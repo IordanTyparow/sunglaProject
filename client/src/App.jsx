@@ -15,6 +15,7 @@ import Logout from "./components/auth/logout/Logout"
 
 import { AuthProvider } from "../context/authContext"
 import { SunglassesProvider } from "../context/sunglassesContext"
+import MyProfile from "./components/my-profile/MyProfile"
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/sunglasses/catalog" element={<Catalog />} />
             <Route path="/sunglasses/create" element={<Create />} />
             <Route path="/auth/login" element={<Login />} />

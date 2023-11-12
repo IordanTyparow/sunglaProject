@@ -20,6 +20,7 @@ export default function Header() {
                 <li><Link to="/sunglasses/catalog" className="navbar">Catalog</Link></li>
                 {isAuthenticated ?
                     <>
+                        <li><Link to="/my-profile" className="navbar">My Profile</Link></li>
                         <li><Link to="/sunglasses/create" className="navbar">Create</Link></li>
                         <li><Link to="/logout" className="navbar">Logout</Link></li>
                     </>
