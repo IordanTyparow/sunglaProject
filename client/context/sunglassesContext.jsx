@@ -21,9 +21,11 @@ export const SunglassesProvider = ({ children }) => {
 
     const removeOne = (sunglassesData) => { setSunglasses((state) => state.filter((sunglasses) => sunglasses !== sunglassesData)); };
 
+    const getOne = (sunglassesId) => sunglasses.find(x => x._id === sunglassesId) || {};
+
     return (
         <SunglassesContext.Provider
-            value={{ sunglasses, setSunglasses, addSunglasses, removeOne }}
+            value={{ sunglasses, setSunglasses, addSunglasses, removeOne, getOne }}
         >
             {children}
         </SunglassesContext.Provider>

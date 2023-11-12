@@ -31,12 +31,10 @@ export default function MyProfile() {
             <h2>Created suglassess</h2>
             <div className="liked-container">
                 {sunglasses.map(x =>
-                    <div key={x._id}>
-                        <div className="product">
-                            <p>Brand: {x.brand}</p>
-                            <p>Price: ${x.price}</p>
-                            <Link to={`/sunglasses/${x._id}/details`}>More info</Link>
-                        </div>
+                    <div className="product" key={x._id}>
+                        <p>Brand: {x.brand}</p>
+                        <p className="price">Price: ${x.price}</p>
+                        <Link to={`/sunglasses/${x._id}/details`}>More info</Link>
                     </div>
                 )}
             </div>

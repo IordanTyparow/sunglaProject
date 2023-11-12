@@ -15,6 +15,12 @@ export const create = async ({ brand, price, description, imageUrl }) => {
         };
     }
 
+    if (description.length > 24) {
+        throw {
+            message: "Description should be maxmimum 24 letters!",
+        };
+    }
+
     const data = await request.post("/data/sunglasses", {
         brand,
         price,
@@ -29,6 +35,12 @@ export const edit = (sunglassesId, { brand, price, description, imageUrl }) => {
     if (!brand || !price || !description || !imageUrl) {
         throw {
             message: "All fields is require!",
+        };
+    }
+
+    if (description.length > 24) {
+        throw {
+            message: "Description should be maxmimum 24 letters!",
         };
     }
 
