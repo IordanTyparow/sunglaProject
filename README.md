@@ -22,3 +22,16 @@ This part of the platform is designed for non-Registered users. These users can 
     A page where the login form for already registered users is located.
 -   Register page ->
     A page where the register form non-users is located.
+
+## Private part
+
+-   Profile ->
+    All user information and all created products from him.
+-   Create sunglasses ->
+    A page with form for creation a sunglasses.
+-   Edit sunglasses ->
+    A page with form for modification of a particularly selected sunglasses.
+-   Delete sunglasses ->
+    A button who deleted of aparticularly selected sunglasses.
+-   Like sunglasses ->
+    A button who liking particularly selected sunglasses.(only non-creaters can like)
