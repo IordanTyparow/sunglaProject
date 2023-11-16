@@ -48,6 +48,7 @@ export default function Detaitls() {
                 <p className="price"><strong>Price:</strong > ${current.price}</p>
                 <p>Description: {current.description}</p>
                 <div className="buttons">
+                    <button>Likes: {likes}</button>
                     {isAuthenticated ?
                         <>
                             {isOwner
@@ -60,9 +61,6 @@ export default function Detaitls() {
                             }
                         </>
                         : ""}
-                </div>
-                <div className="like-btn">
-                    <p>Likes: {likes}</p>
                 </div>
             </div>
         </section >

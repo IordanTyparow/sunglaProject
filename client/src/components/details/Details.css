@@ -79,12 +79,6 @@
     color: #fff;
 }
 
-.details-page .like-btn {
-    position: fixed;
-    left: 850px;
-    margin: -115px;
-}
-
 .details-page .buttons button {
     font-size: 25px;
     color: white;

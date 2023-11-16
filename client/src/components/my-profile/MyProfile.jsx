@@ -30,13 +30,13 @@ export default function MyProfile() {
             </div>
             <h2>Created suglassess</h2>
             <div className="liked-container">
-                {sunglasses.map(x =>
+                {sunglasses.length > 0 ? sunglasses.map(x =>
                     <div className="product" key={x._id}>
                         <p>Brand: {x.brand}</p>
                         <p className="price">Price: ${x.price}</p>
                         <Link to={`/sunglasses/${x._id}/details`}>More info</Link>
                     </div>
-                )}
+                ) : <h2>No have created sunglasses!</h2>}
             </div>
         </section>
     );
