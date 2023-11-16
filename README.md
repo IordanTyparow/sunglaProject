@@ -35,3 +35,23 @@ This part of the platform is designed for non-Registered users. These users can 
     A button who deleted of aparticularly selected sunglasses.
 -   Like sunglasses ->
     A button who liking particularly selected sunglasses.(only non-creaters can like)
+
+## About The Project - Technical Description
+
+### Built With
+
+-   [React + Vite](https://vitejs.dev/guide/)
+-   [Softuni Practice Server](https://github.com/softuni-practice-server/softuni-practice-server)
+-   HTML + CSS created by me.
+
+## Available Scripts
+
+In project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in development mode.\
+Open [http://127.0.0.1:5173](http://127.0.0.1:5173)
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
