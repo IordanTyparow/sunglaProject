@@ -12,7 +12,11 @@ const SunglassesOwner = ({ children }) => {
 
     const currentSunglasses = getOne(sunglassesId);
 
-    if (isAuthenticated && user._id !== currentSunglasses._ownerId) {
+    if (!isAuthenticated) {
+        return <Navigate to="/404" replace />
+    }
+
+    if (user._id !== currentSunglasses._ownerId) {
         return <Navigate to="/404" replace />
     }
 
