@@ -13,6 +13,12 @@ This [project](https://github.com/IordanTyparow/sunglaProject) was created by [I
 This part of the platform is designed for non-Registered users. These users can access to following:
 
 -   Home page ->
-    Static sunglasses who sented users to catalog page
+    Static sunglasses who sented users to catalog page.
 -   Catalog page ->
-    They can see all products and details without functionality
+    They can see all available sunglasses.
+-   Details page ->
+    They can see details without functionality.
+-   Login page ->
+    A page where the login form for already registered users is located.
+-   Register page ->
+    A page where the register form non-users is located.
