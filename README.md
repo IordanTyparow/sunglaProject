@@ -8,12 +8,11 @@ This [project](https://github.com/IordanTyparow/sunglaProject) was created by [I
 
 ![Project Home page](https://i.ibb.co/F0hdVv7/HomePage.png)
 
-
-
-
 ## Public part
 
 This part of the platform is designed for non-Registered users. These users can access to following:
 
-* Home page ->
-    static sunglasses who sented users to catalog page
+-   Home page ->
+    Static sunglasses who sented users to catalog page
+-   Catalog page ->
+    They can see all products and details without functionality
