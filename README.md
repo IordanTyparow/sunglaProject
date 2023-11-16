@@ -4,6 +4,6 @@
 
 The project is designed as a platform for a sunglasses shop. Every user who created sunglasses can modified,deleted. If user is not creater then he can only like the sunglasses.
 
-This project was created by Iordan Typarov for the purposes of React Softuni Course, Nov-Deb 2023.
+This [project](https://github.com/IordanTyparow/sunglaProject) was created by [Iordan Typarov](https://github.com/IordanTyparow) for the purposes of React Softuni Course, Nov-Deb 2023.
 
 ![Project Home page](https://i.ibb.co/F0hdVv7/HomePage.png)
