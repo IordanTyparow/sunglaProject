@@ -6,4 +6,4 @@ The project is designed as a platform for a sunglasses shop. Every user who crea
 
 This project was created by Iordan Typarov for the purposes of React Softuni Course, Nov-Deb 2023.
 
-![Project Home page](https://ibb.co/NmFGShY)
+![Project Home page](https://i.ibb.co/F0hdVv7/HomePage.png)
