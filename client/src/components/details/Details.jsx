@@ -2,10 +2,12 @@ import "./Details.css";
 
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../../context/authContext"
-import * as sunglassesService from "../../services/sunglassesService"
+import { AuthContext } from "../../../context/authContext";
+import * as sunglassesService from "../../services/sunglassesService";
+
+import Comments from "./comments/Comments";
 
 export default function Detaitls() {
     const [current, setCurrent] = useState({});
@@ -41,6 +43,8 @@ export default function Detaitls() {
     return (
         <section className="details-page">
             <h1>Details page</h1>
+
+            <Comments />
 
             <div className="product">
                 <img src={current.imageUrl} alt="photo" />
