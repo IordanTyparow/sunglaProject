@@ -1,5 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-import * as sunglassesService from "../src/services/sunglassesService";
+import { createContext, useState } from "react";
 
 export const SunglassesContext = createContext();
 

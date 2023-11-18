@@ -55,7 +55,7 @@ export const edit = (sunglassesId, { brand, price, description, imageUrl }) => {
 };
 
 export const like = (sunglassesId) => {
-    request.post("/data/likes", { sunglassesId });
+    return request.post("/data/likes", { sunglassesId });
 };
 
 export const ownLikes = (sunglassesId) => {
@@ -73,3 +73,29 @@ export const currentUserLikes = (sunglassesId, userId) => {
         )}%22%20and%20_ownerId%3D%22${encodeURIComponent(userId)}%22&count`
     );
 };
+
+export const addComment = async (sunglassesId, commentText, email) => {
+    if (!commentText) {
+        throw {
+            message: "The field is required!",
+        };
+    }
+
+    if (commentText.length > 27) {
+        throw {
+            message: "The comment shoulde be 27 letters long!",
+        };
+    }
+
+    const data = await request.post("/data/comments", {
+        sunglassesId,
+        commentText,
+        email,
+    });
+
+    return data;
+};
+
+export const getAllComments = () => request.get("/data/comments");
+
+export const deleteComment = (commentId) => request.del(`/data/comments/${commentId}`);

@@ -20,6 +20,7 @@
     padding: 10px;
     margin-bottom: 15px;
     text-align: left;
+    position: relative; /* Added for positioning the delete button */
 }
 
 .comments-section .comment h4,
@@ -37,8 +38,27 @@
     color: #555;
 }
 
+.comments-section .delete-btn {
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+    color: red;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 25px;
+}
+
+.comments-section .comment:hover {
+    background-color: lightseagreen;
+}
+
+.comments-section .comment:hover .delete-btn {
+    opacity: 1;
+}
+
 .comments-section form {
-    margin-top: 570px;
     display: flex;
     align-items: center;
 }
@@ -69,4 +89,10 @@
 
 .comments-section button:hover {
     background-color: #45a049;
+}
+
+.comments-section h3 {
+    color: red;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
