@@ -77,7 +77,7 @@ export default function Register() {
                     placeholder="confirm-password"
                 />
                 <button type="submit">Register</button>
-                <Link to="/login">If you have account</Link>
+                <Link to="/auth/login">If you have account</Link>
             </form>
         </section>
     );

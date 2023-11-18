@@ -43,7 +43,7 @@ export default function Login() {
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" value={values.password} onChange={onSetValueHandler} placeholder="Password" />
                     <button type="submit">Login</button>
-                    <Link to="/register">If don't have account</Link>
+                    <Link to="/auth/register">If don't have account</Link>
                 </form>
             </div>
         </section>
