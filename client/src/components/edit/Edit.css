@@ -1,6 +1,8 @@
 .edit-page {
     text-align: center;
     margin: 20px;
+    height: 100%;
+    width: 90%;
 }
 
 .edit-page h1 {

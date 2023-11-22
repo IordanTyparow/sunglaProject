@@ -2,10 +2,12 @@
     text-align: center;
     background-color: #fff;
     max-width: 550px;
-    margin: 250px auto;
+    margin: 150px auto;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 100%;
 }
 
 .register-page h1 {
@@ -15,6 +17,7 @@
 
 .register-form {
     margin-top: 20px;
+    position: relative;
 }
 
 .register-form input {
@@ -43,8 +46,8 @@
 
 .register-form a {
     position: absolute;
-    right: 920px;
-    margin-top: 45px;
+    right: 2px;
+    top: 400px;
     text-decoration: none;
     font-size: 20px;
     color: #333;

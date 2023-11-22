@@ -9,11 +9,13 @@ export default function Header() {
 
     return (
         <header className="header-page">
-            <div className="user-photo">
-                <img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" />
-            </div>
-            <div className="username">
-                <p>Welcome {user.email || 'Guest!'}</p>
+            <div className="userRapper">
+                <div className="user-photo">
+                    <img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" />
+                </div>
+                <div className="username">
+                    <p>Welcome {user.email || 'Guest!'}</p>
+                </div>
             </div>
             <ul>
                 <li><Link to="/" className="navbar">Home</Link></li>

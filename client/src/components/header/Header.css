@@ -1,6 +1,10 @@
 body {
     margin: 0px;
     padding: 0px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     background-image: url("/images/rachel-cook-mOcdke2ZQoE-unsplash.jpg");
@@ -14,6 +18,7 @@ main {
 }
 
 .header-page {
+    position: relative;
     background-color: #333;
     height: 61px;
 }
@@ -41,7 +46,7 @@ main {
 }
 
 .header-page .user-photo {
-    position: fixed;
+    position: absolute;
     margin-top: 5px;
     left: 550px;
     width: 60px;
@@ -56,14 +61,16 @@ main {
 }
 
 .header-page .user-photo img {
+    position: absolute;
     max-width: 100%;
     max-height: 100%;
-    width: 60px;
-    height: 55px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .header-page .username {
+    position: absolute;
     position: fixed;
     margin-top: -10px;
     left: 620px;

@@ -1,5 +1,9 @@
 .catalog-page {
     text-align: center;
+    margin: 0px auto;
+    padding: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .catalog-page h1 {

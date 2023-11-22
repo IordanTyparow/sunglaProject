@@ -20,7 +20,7 @@
     padding: 10px;
     margin-bottom: 15px;
     text-align: left;
-    position: relative; /* Added for positioning the delete button */
+    position: relative; 
 }
 
 .comments-section .comment h4,

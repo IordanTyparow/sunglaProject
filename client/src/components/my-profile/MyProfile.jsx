@@ -21,7 +21,6 @@ export default function MyProfile() {
 
     return (
         <section className="my-profile">
-            <h1 className="header">My Profile</h1>
             <div className="card">
                 <div className="img-container">
                     <img src={user.imageUrl || '/images/guest.png'} alt="John" />
