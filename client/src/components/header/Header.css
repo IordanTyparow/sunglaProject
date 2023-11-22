@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     background-image: url("/images/rachel-cook-mOcdke2ZQoE-unsplash.jpg");
     background-repeat: no-repeat;
