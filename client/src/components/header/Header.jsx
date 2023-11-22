@@ -9,15 +9,9 @@ export default function Header() {
 
     return (
         <header className="header-page">
-            <div className="userRapper">
-                <div className="user-photo">
-                    <img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" />
-                </div>
-                <div className="username">
-                    <p>Welcome {user.email || 'Guest!'}</p>
-                </div>
-            </div>
             <ul>
+                <li className="user-photo"><img src={user.imageUrl || "/images/guest.png"} alt="userPhoto" /></li>
+                <li className="username"><p>Welcome {user.email || 'Guest!'}</p></li>
                 <li><Link to="/" className="navbar">Home</Link></li>
                 <li><Link to="/sunglasses/catalog" className="navbar">Catalog</Link></li>
                 {isAuthenticated ?
