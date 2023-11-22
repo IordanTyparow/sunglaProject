@@ -15,6 +15,11 @@
         font-size: 14px;
     }
 
+    .header-page {
+        float: none;
+        width: auto;
+    }
+
     .container {
         max-width: 600px;
         margin: 0 auto;
@@ -83,7 +88,7 @@ main {
 .header-page {
     background-color: #333;
     height: 61px;
-    position: relative; 
+    position: relative;
 }
 
 .header-page ul {
