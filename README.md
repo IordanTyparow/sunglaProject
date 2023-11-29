@@ -24,6 +24,8 @@ This part of the platform is designed for non-Registered users. These users can 
     A page where the login form for already registered users is located.
 -   Register page ->
     A page where the register form non-users is located.
+-   Comments ->
+    Guest only can see comments on current sunglasses.
 
 ## Private part
 
@@ -37,6 +39,8 @@ This part of the platform is designed for non-Registered users. These users can 
     A button who deleted of aparticularly selected sunglasses.
 -   Like sunglasses ->
     A button who liking particularly selected sunglasses.(only non-creaters can like)
+-   Comments ->
+    Logged in user can comment on all sunglasses. Creator of comment can delete his comment.
 
 ## About The Project - Technical Description
 
@@ -48,7 +52,7 @@ This part of the platform is designed for non-Registered users. These users can 
 
 ## Available Scripts
 
-In project directory, you can run:
+In client directory, you can run:
 
 ### `npm run dev`
 
