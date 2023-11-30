@@ -13,6 +13,7 @@ import Edit from "./components/edit/Edit";
 import Delete from "./components/delete/Delete";
 import Logout from "./components/auth/logout/Logout";
 import MyProfile from "./components/my-profile/MyProfile";
+import About from "./components/about/About";
 
 import { AuthProvider } from "../context/authContext";
 import { SunglassesProvider } from "../context/sunglassesContext";
@@ -29,6 +30,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
             <Route path="/sunglasses/catalog" element={<Catalog />} />
             <Route path="/sunglasses/create" element={<PrivateRoute><Create /></PrivateRoute>} />

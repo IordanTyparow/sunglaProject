@@ -1,4 +1,4 @@
-const host = "https://server-apf0.onrender.com";
+const host = "http://localhost:3030";
 
 async function request(method, url, data) {
     let options = {

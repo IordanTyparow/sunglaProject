@@ -8,9 +8,11 @@ import { AuthContext } from "../../../context/authContext";
 import * as sunglassesService from "../../services/sunglassesService";
 
 import Comments from "./comments/Comments";
+import Spinner from "../spinner/Spinner";
 
 export default function Detaitls() {
     const [current, setCurrent] = useState({});
+    const [load, setLoad] = useState(true);
     const [likes, setLikes] = useState(0);
     const [userLikes, setUserLikes] = useState(0);
     const navigate = useNavigate();
@@ -27,6 +29,7 @@ export default function Detaitls() {
         sunglassesService.currentUserLikes(sunglassesId, user._id)
             .then(userLikesCount => setUserLikes(userLikesCount))
 
+        setLoad(false);
     }, [sunglassesId, user._id]);
 
     const onLikeHandler = async (sunglassesId) => {
@@ -46,27 +49,32 @@ export default function Detaitls() {
 
             <Comments />
 
-            <div className="product">
-                <img src={current.imageUrl} alt="photo" />
-                <h3>Brand: {current.brand}</h3>
-                <p className="price"><strong>Price:</strong > ${current.price}</p>
-                <p>Description: {current.description}</p>
-                <div className="buttons">
-                    <button>Likes: {likes}</button>
-                    {isAuthenticated ?
-                        <>
-                            {isOwner
-                                ?
-                                <>
-                                    <Link to={`/sunglasses/${current._id}/edit`}>Edit</Link>
-                                    <Link to={`/sunglasses/${current._id}/delete`}>Delete</Link>
-                                </>
-                                : userLikes == 0 ? <button onClick={() => onLikeHandler(current._id)}>Like</button> : <button>You already liked this post!</button>
-                            }
-                        </>
-                        : ""}
+            {load
+                ? <Spinner />
+                :
+                <div className="product">
+                    <img src={current.imageUrl} alt="photo" />
+                    <h3>Brand: {current.brand}</h3>
+                    <p className="price"><strong>Price:</strong > ${current.price}</p>
+                    <p>Description: {current.description}</p>
+                    <div className="buttons">
+                        <button>Likes: {likes}</button>
+                        {isAuthenticated ?
+                            <>
+                                {isOwner
+                                    ?
+                                    <>
+                                        <Link to={`/sunglasses/${current._id}/edit`}>Edit</Link>
+                                        <Link to={`/sunglasses/${current._id}/delete`}>Delete</Link>
+                                    </>
+                                    : userLikes == 0 ? <button onClick={() => onLikeHandler(current._id)}>Like</button> : <button>You already liked this post!</button>
+                                }
+                            </>
+                            : ""}
+                    </div>
                 </div>
-            </div>
+            }
+
         </section >
     );
 }
