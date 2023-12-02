@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../../context/authContext";
+import { SunglassesContext } from "../../../context/sunglassesContext";
 import * as sunglassesService from "../../services/sunglassesService";
 
 import Comments from "./comments/Comments";
@@ -15,8 +16,9 @@ export default function Detaitls() {
     const [load, setLoad] = useState(true);
     const [likes, setLikes] = useState(0);
     const [userLikes, setUserLikes] = useState(0);
-    const navigate = useNavigate();
     const { user, isAuthenticated } = useContext(AuthContext);
+    const { addToCart } = useContext(SunglassesContext);
+    const navigate = useNavigate();
     const { sunglassesId } = useParams();
 
     useEffect(() => {
@@ -39,6 +41,10 @@ export default function Detaitls() {
         setUserLikes(1);
 
         navigate(`/sunglasses/${sunglassesId}/details`);
+    };
+
+    const addToCartHandler = (e) => {
+        addToCart(current);
     };
 
     const isOwner = current._ownerId === user._id;
@@ -76,7 +82,7 @@ export default function Detaitls() {
                                 }
                             </>
                             : ""}
-                        <button>Add to Cart</button>
+                        <button onClick={addToCartHandler}>Add to Cart</button>
                     </div>
                 </div>
             }

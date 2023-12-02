@@ -26,8 +26,8 @@ function App() {
 
   return (
     <AuthProvider>
-      <Header />
       <SunglassesProvider>
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

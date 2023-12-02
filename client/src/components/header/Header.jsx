@@ -3,9 +3,11 @@ import "./Header.css"
 
 import { useContext } from "react";
 import { AuthContext } from "../../../context/authContext";
+import { SunglassesContext } from "../../../context/sunglassesContext";
 
 export default function Header() {
-    const { isAuthenticated, user } = useContext(AuthContext)
+    const { isAuthenticated, user } = useContext(AuthContext);
+    const { cart } = useContext(SunglassesContext);
 
     return (
         <header className="header-page">
@@ -21,7 +23,7 @@ export default function Header() {
                         <li><Link to="/sunglasses/create" className="navbar">Create</Link></li>
                         <li>
                             <Link to="/sunglasses/cart" className="navbar">Cart</Link>
-                            <span className="product-count">3</span>
+                            <span className="product-count">{cart.length}</span>
                         </li>
                         <li><Link to="/logout" className="navbar">Logout</Link></li>
                     </>
