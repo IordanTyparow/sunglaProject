@@ -71,12 +71,12 @@ export default function Detaitls() {
                                         ?
                                         <>
                                             <button onClick={() => onLikeHandler(current._id)}>Like</button>
-                                            <button>Add to Cart</button>
                                         </>
                                         : <button>You already liked this post!</button>
                                 }
                             </>
                             : ""}
+                        <button>Add to Cart</button>
                     </div>
                 </div>
             }
