@@ -19,6 +19,7 @@ export default function Header() {
                     <>
                         <li><Link to="/my-profile" className="navbar">Profile</Link></li>
                         <li><Link to="/sunglasses/create" className="navbar">Create</Link></li>
+                        <li><Link to="/sunglasses/cart" className="navbar">Cart</Link></li>
                         <li><Link to="/logout" className="navbar">Logout</Link></li>
                     </>
                     :

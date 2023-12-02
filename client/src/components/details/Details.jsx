@@ -67,7 +67,13 @@ export default function Detaitls() {
                                         <Link to={`/sunglasses/${current._id}/edit`}>Edit</Link>
                                         <Link to={`/sunglasses/${current._id}/delete`}>Delete</Link>
                                     </>
-                                    : userLikes == 0 ? <button onClick={() => onLikeHandler(current._id)}>Like</button> : <button>You already liked this post!</button>
+                                    : userLikes == 0
+                                        ?
+                                        <>
+                                            <button onClick={() => onLikeHandler(current._id)}>Like</button>
+                                            <button>Add to Cart</button>
+                                        </>
+                                        : <button>You already liked this post!</button>
                                 }
                             </>
                             : ""}

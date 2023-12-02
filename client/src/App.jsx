@@ -14,6 +14,7 @@ import Delete from "./components/delete/Delete";
 import Logout from "./components/auth/logout/Logout";
 import MyProfile from "./components/my-profile/MyProfile";
 import About from "./components/about/About";
+import Cart from "./components/cart/Cart";
 
 import { AuthProvider } from "../context/authContext";
 import { SunglassesProvider } from "../context/sunglassesContext";
@@ -38,6 +39,7 @@ function App() {
             <Route path="/auth/register" element={<IsAlreadyAuth><Register /></IsAlreadyAuth>} />
             <Route path="/sunglasses/:sunglassesId/details" element={<Detaitls />} />
             <Route path="/sunglasses/:sunglassesId/edit" element={<SunglassesOwner><Edit /></SunglassesOwner>} />
+            <Route path="/sunglasses/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
             <Route path="/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
             <Route path="/sunglasses/:sunglassesId/delete" element={<SunglassesOwner><Delete /></SunglassesOwner>} />
             <Route path="*" element={<ErrorPage />} />
