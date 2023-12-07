@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Router } from "react-router-dom"
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
@@ -27,8 +27,10 @@ function App() {
   return (
     <AuthProvider>
       <SunglassesProvider>
-        <Header />
+
         <main>
+          <Header />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -44,10 +46,11 @@ function App() {
             <Route path="/sunglasses/:sunglassesId/delete" element={<SunglassesOwner><Delete /></SunglassesOwner>} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-        </main>
-      </SunglassesProvider>
 
-      <Footer />
+          <Footer />
+        </main>
+
+      </SunglassesProvider>
     </AuthProvider>
   )
 }
