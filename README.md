@@ -54,7 +54,12 @@ This part of the platform is designed for non-Registered users. These users can 
 
 In client directory, you can run:
 
+### `npm install`
 ### `npm run dev`
+
+In server directory, you can run:
+
+### `node server.js`
 
 Runs the app in development mode.\
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173)
