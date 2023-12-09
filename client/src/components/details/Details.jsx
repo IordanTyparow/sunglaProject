@@ -80,9 +80,9 @@ export default function Detaitls() {
                                         </>
                                         : <button>You already liked this post!</button>
                                 }
+                                <button onClick={addToCartHandler}>Add to Cart</button>
                             </>
                             : ""}
-                        <button onClick={addToCartHandler}>Add to Cart</button>
                     </div>
                 </div>
             }
